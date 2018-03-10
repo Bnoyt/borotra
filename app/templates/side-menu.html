@@ -1,0 +1,63 @@
+{% load static %}
+
+<div class="sidebar" data-color="orange">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+            <div class="logo">
+                <a href="{% url 'index' %}" class="simple-text logo-mini">
+                    TB
+                </a>
+                <a href="{% url 'index' %}" class="simple-text logo-normal">
+                    Tournoi Borotra
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li{% if page_index %} class="active"{% endif %}>
+                        <a href="{% url 'index' %}">
+                            <i class="now-ui-icons design_app"></i>
+                            <p>Accueil</p>
+                        </a>
+                    </li>
+                {% if request.user.is_authenticated %}
+                    <li{% if page_matchs %} class="active"{% endif %}>
+                        <a href="{% url 'matchs' %}">
+                            <i class="now-ui-icons education_atom"></i>
+                            <p>Mes matchs</p>
+                        </a>
+                    </li>
+                    <li{% if page_profil %} class="active"{% endif %}>
+                        <a href="{% url 'profil' %}">
+                            <i class="now-ui-icons design_bullet-list-67"></i>
+                            <p>Mon profil</p>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li{% if page_faq %} class="active"{% endif %}>
+                        <a href="{% url 'faq' %}">
+                            <i class="now-ui-icons design_bullet-list-67"></i>
+                            <p>FAQ</p>
+                        </a>
+                    </li>
+                    <li{% if page_tableaux %} class="active"{% endif %}>
+                        <a href="{% url 'tableaux' %}">
+                            <i class="now-ui-icons location_map-big"></i>
+                            <p>Les tableaux</p>
+                        </a>
+                    </li>
+                    <li{% if page_palmares %} class="active"{% endif %}>
+                        <a href="{% url 'palmares' %}">
+                            <i class="now-ui-icons ui-1_bell-53"></i>
+                            <p>Le palmarès</p>
+                        </a>
+                    </li>
+                    <li{% if page_propos %} class="active"{% endif %}>
+                        <a href="{% url 'a-propos' %}">
+                            <i class="now-ui-icons users_single-02"></i>
+                            <p>À propos</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>

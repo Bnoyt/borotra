@@ -1,0 +1,123 @@
+{% load static %}
+
+
+<!--   Core JS Files   -->
+<script src="{% static 'js/core/jquery.min.js' %}"></script>
+<script src="{% static 'js/core/popper.min.js' %}"></script>
+<script src="{% static 'js/core/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+<!-- Chart JS -->
+<script src="{% static 'js/plugins/chartjs.min.js' %}"></script>
+<!--  Notifications Plugin    -->
+<script src="{% static 'js/plugins/bootstrap-notify.js' %}"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="{% static 'js/now-ui-dashboard.js' %}"></script>
+<script src="{% static 'js/now-ui-kit.js' %}"></script>
+
+
+
+
+    <script>
+
+
+
+
+
+function notification(){
+        $.notify({
+            message: "Combinaison mot de passe / pseudo erronnée"
+
+        },{
+            type: 'danger',
+            timer: 4000,
+            placement: {
+                from: 'top',
+                align: 'center'
+            }
+        });
+    };
+
+
+
+
+
+function notifier(message,type){
+    $.notify({
+            message: message
+
+        },{
+            type: type,
+            timer: 100,
+            placement: {
+                from: 'top',
+                align: 'center'
+            }
+        });
+}
+
+
+
+function retour_login(reponse){
+    
+    var message;
+    var type;
+    var text = reponse['text'];
+
+
+    if (text=="success"){
+        
+        message = "Connection réussie";
+        type = 'success';
+        notifier(message,type);
+        $('#email').val('');
+        $('#mp').val('');
+        setTimeout(function(){location.reload();},1000);
+
+    } else {
+        type = "danger";
+        if (text=='deconnect'){
+            message = 'Vous avez été déconnecté';
+            setTimeout(function(){location.reload();},1000);
+        }
+        else {
+           message = 'Combinaison mot de passe / email inconnue';
+        }
+        notifier(message,type);
+    
+    }
+    
+
+   
+    
+
+}
+
+
+
+$("#form_button").click(function(event){
+
+    event.preventDefault();
+
+    email = $('#id_email').val();
+
+    mdp = $('#id_mdp').val();
+
+    crsftoken = $("[name='csrfmiddlewaretoken']").val();
+
+    $("#modal-login").modal("hide");
+    
+
+    $.post('{% url "login" %}',{csrfmiddlewaretoken:crsftoken,email:email,mdp:mdp},retour_login,'json');
+
+
+
+
+});
+
+
+
+    </script>
+
+
+
+</html>

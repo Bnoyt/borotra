@@ -1,0 +1,83 @@
+{% load static %}
+{% include "header.html" %}
+
+<body>
+
+
+
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center" href="{% url 'login' %}">
+                        <h4 class="title title-up">Se connecter</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        {% csrf_token %}
+                        <div class="input-group form-group-no-border input-lg">
+                                <span class="input-group-addon">
+                                    <i class="now-ui-icons users_circle-08"></i>
+                                </span>
+                                <input id="id_email" type="text" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="input-group form-group-no-border input-lg">
+                                <span class="input-group-addon">
+                                    <i class="now-ui-icons text_caps-small"></i>
+                                </span>
+                                <input id="id_mdp" type="password" placeholder="Mot de passe" class="form-control" />
+                            </div>
+                    </div>
+                    <div class="modal-footer text-center">
+                            <a id="form_button" class="btn btn-primary btn-round btn-lg btn-block">Se connecter</a>
+                    </div>
+                     <div class="modal-footer pull-right">
+                            <h6>
+                                <a href="#pablo" class="link">S'inscrire</a>
+                            </h6>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<div class="wrapper" id="main">
+	{% block side-menu %}
+        {% include "side-menu.html" %}
+	{% endblock %}
+
+    <div class="main-panel">
+        {% include "top-menu.html" %} 
+            <div class="panel-header panel-header-lg">
+                <img src="{% static 'img/Roger-Federer.jpg' %}"/>
+            </div>
+
+
+        <div class="content">
+           
+            {% block content %}
+    	
+            {% endblock %} 
+
+        </div>
+        
+
+
+        <footer class="footer">
+                <div class="container-fluid">
+                    <div class="copyright">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>, Site développé par Benoît Durand (Prez 2016)
+                    </div>
+                </div>
+            </footer>
+
+    </div>
+</div>
+
+
+</body>
+
+{% include "javascript.html" %}

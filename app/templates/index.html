@@ -1,0 +1,135 @@
+{% extends 'base.html' %} {% load static%} {% block content %}
+   
+
+				<div class="row">
+                    <div class="col-lg-6">
+                        <div class="card card-chart">
+                            <div class="card-header">
+                                <h5 class="card-category">Inscriptions tournoi en individuel</h5>
+                                <h4 class="card-title">Les inscriptions en simple pour le tournoi Borotra 2018 sont ouvertes</h4>
+                                
+                            </div>
+                            <div class="card-body text-center">
+                                <button class="btn btn-primary btn-round btn-lg btn-block">S'inscrire</button>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="now-ui-icons arrows-1_refresh-69"></i> Vous avez jusqu'au 15 avril pour vous inscrire
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card card-chart">
+                            <div class="card-header">
+                                <h5 class="card-category">Inscriptions tournoi en équipes</h5>
+                                <h4 class="card-title">Les inscriptions en équipe pour le tournoi Borotra 2018 sont ouvertes</h4>
+                                
+                            </div>
+                            <div class="card-body text-center">
+                                <button class="btn btn-primary btn-round btn-lg btn-block">S'inscrire</button>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="now-ui-icons arrows-1_refresh-69"></i> Vous avez jusqu'au 15 avril pour vous inscrire
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-lg-12">
+                        <div class="card card-chart">
+                            <div class="card-header">
+                                <h5 class="card-category">Le point culture</h5>
+                                <h4 class="card-title">Mais qu'est-ce que le tournoi Borotra ?</h4>
+                                
+                            </div>
+                            <div class="card-body">
+                                Le tournoi Borotra est un tournoi organisé par le binet tennis tous les ans pendant le tronc commun. Cette année le tournoi fait peau neuve et se met à la page pour vous proposer un tournoi intense et qui permette à chacun quelque soit son niveau de s'amuser seul ou en équipe et de progresser avec ses copains.
+                            	</p>
+                                C'est le rendez-vous à ne pas manquer pour tous les amateurs de tennis. Le tournoi de simple sera divisé en trois phases : pour les débutant, puis pour les joueurs intermédiaires, et enfin pour les joueurs experts. Les qualifiés de chaque phase passant évidemment dans les phases supérieures.
+                                </p>
+                                C'est l'enjaille garantie !
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <a href="{% url 'faq' %}"><i class="now-ui-icons arrows-1_refresh-69"></i> Voir la suite dans la FAQ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="row">
+                 	<div class="col-md-4">
+                        <div class="card card-user">
+                            <div class="image">
+                                <img src="{% static 'img/bg5.jpg' %}" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="author">
+                                    <a href="#">
+                                        <img class="avatar border-gray" src="{% static 'img//mike.jpg' %}" alt="...">
+                                        <h5 class="title">Benoît Durand</h5>
+                                    </a>
+                                    <p class="description">
+                                        Prèz 2016
+                                    </p>
+                                </div>
+                                <p class="description text-center">
+                                    Également respo web du JTX, il est intimement persuadé que Federer est le meilleur joueur de tous les temps. Il a su s'entourer des tout meilleurs tennismen 2016 pour l'aider dans sa noble tâche
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-user">
+                            <div class="image">
+                                <img src="{% static 'img/bg5.jpg' %}" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="author">
+                                    <a href="#">
+                                        <img class="avatar border-gray" src="{% static 'img//mike.jpg' %}" alt="...">
+                                        <h5 class="title">Nicolas Dixneuf</h5>
+                                    </a>
+                                    <p class="description">
+                                        Vice-prèz 2016
+                                    </p>
+                                </div>
+                                <p class="description text-center">
+                                    Membre du binet photo, il sait que le tennis ne se résume pas à un chiffre, et que le 21ème n'est jamais loin (même si voir federer rester à 19 aurait incontestablement été un honneur pour lui)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-user">
+                            <div class="image">
+                                <img src="{% static 'img/bg5.jpg' %}" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="author">
+                                    <a href="#">
+                                        <img class="avatar border-gray" src="{% static 'img//mike.jpg' %}" alt="...">
+                                        <h5 class="title">Paul Caron</h5>
+                                    </a>
+                                    <p class="description">
+                                        Trèz 2016
+                                    </p>
+                                </div>
+                                <p class="description text-center">
+                                    Depuis très longtemps mordu de Django, il ne peut s'empêcher de penser javascript, et nul doute qu'il aura les épaules pour rendre le Borotra enfin plus rentable que Roland-Garros. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+
+{% endblock %}
+
