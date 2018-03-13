@@ -136,3 +136,9 @@ def tableauequipe(request):
     context = {'page_propos':True}
 
     return render(request, 'tableau-equipe.html', context)
+
+def inconstruct(request):
+    #call database
+    context = {'page_propos':True}
+
+    return render(request, 'inconstruct.html', context)

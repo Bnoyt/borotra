@@ -25,7 +25,7 @@ SECRET_KEY = 'jy464+sassfayq8sqy#rpcklvxi9s7__pthl7%b4qun5r%25+3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*","borotra.binets.fr"]
 
 
 # Application definition
