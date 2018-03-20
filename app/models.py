@@ -30,7 +30,7 @@ class Team(models.Model):
     joueur3_classement = models.CharField(max_length=100)
     joueur4_prenom = models.CharField(max_length=100)
     joueur4_nom = models.CharField(max_length=100)
-    joueur_classement = models.CharField(max_length=100)
+    joueur4_classement = models.CharField(max_length=100)
 
     def __str__(self):
         return self.nom

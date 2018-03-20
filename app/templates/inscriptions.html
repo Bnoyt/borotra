@@ -1,0 +1,125 @@
+{% extends 'base.html' %} {% load static%} {% block content %}
+
+{% if pas_inscris_simple %}
+<div class="modal fade" id="modal-simple" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <h4 class="title title-up">Inscription au tournoi de simple</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        En cliquant sur m'inscrire, je m'engage à jouer mes matchs de tennis en respectant les délais et les règles imposées, ainsi que mon adversaire.
+                        En outre, je m'engage à communiquer au plus vite les résultats d'un match après l'avoir joué via le présent site internet.
+
+                    </p>
+
+                        Si je ne peux pas jouer dans les délais imposés, je m'engage à contacter le juge arbitre pour lui exposer la situation.
+
+                    </div>
+                    <div class="modal-footer text-center">
+                            <a id="form_button" class="btn btn-primary btn-round btn-lg btn-block">M'inscrire</a>
+                    </div>                     
+                </div>
+            </div>
+        </div>
+{% else %}
+<div class="modal fade" id="modal-simple" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <h4 class="title title-up">Désinscription au tournoi de simple</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        En cliquant sur me désinscrire, j'annule ma participation au tournoi (il est toujours possible de se réinscrire avant la deadline)
+
+                    </div>
+                    <div class="modal-footer text-center">
+                            <a id="form_button" class="btn btn-primary btn-round btn-lg btn-block">Me désinscrire</a>
+                    </div>                     
+                </div>
+            </div>
+        </div>
+{% endif %}
+
+{% if pas_inscris_equipes %}
+<div class="modal fade" id="modal-simple" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <h4 class="title title-up">Inscription au tournoi de simple</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        En cliquant sur m'inscrire, je m'engage à jouer mes matchs de tennis en respectant les délais et les règles imposées, ainsi que mon adversaire.
+                        En outre, je m'engage à communiquer au plus vite les résultats d'un match après l'avoir joué via le présent site internet.
+
+                    </p>
+
+                        Si je ne peux pas jouer dans les délais imposés, je m'engage à contacter le juge arbitre pour lui exposer la situation.
+
+                    </div>
+                    <div class="modal-footer text-center">
+                            <a id="form_button" class="btn btn-primary btn-round btn-lg btn-block">M'inscrire</a>
+                    </div>                     
+                </div>
+            </div>
+        </div>
+{% else %}
+<div class="modal fade" id="modal-simple" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <h4 class="title title-up">Désinscription au tournoi de simple</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        En cliquant sur me désinscrire, j'annule ma participation au tournoi (il est toujours possible de se réinscrire avant la deadline)
+
+                    </div>
+                    <div class="modal-footer text-center">
+                            <a id="form_button" class="btn btn-primary btn-round btn-lg btn-block">Me désinscrire</a>
+                    </div>                     
+                </div>
+            </div>
+        </div>
+{% endif %}
+
+
+
+
+
+
+<div class="card">
+    <ul class="nav nav-tabs justify-content-center" role="tablist">
+         <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#simple1" role="tab">Tournoi de simple</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#simple2" role="tab">Championnat par équipes</a>
+        </li>
+    </ul>
+    <div class="card-body">
+        <!-- Tab panes -->
+        <div class="tab-content text-center">
+            <div class="tab-pane active" id="simple1" role="tabpanel">
+
+                   <button class="btn btn-primary"  data-toggle="modal" data-target="#modal-simple" {% if inscris_simple %} hidden {% endif %}>M'inscrire</button>
+                <button class="btn btn-primary"  data-toggle="modal" data-target="#modal-simple" {% if pas_inscris_simple %} hidden {% endif %}>Me désinscrire</button>
+
+
+               
+            </div>
+            <div class="tab-pane" id="simple2" role="tabpanel">
+                 <button class="btn btn-primary"  data-toggle="modal" data-target="#modal-equipe" {% if inscris_simple %} hidden {% endif %}>Inscrire mon équipe</button>
+                <button class="btn btn-primary"  data-toggle="modal" data-target="#modal-equipe" {% if pas_inscris_simple %} hidden {% endif %}>Désinscrire mon équipe</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

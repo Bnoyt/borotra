@@ -12,10 +12,8 @@ urlpatterns = [
     url(r'^profil/$', views.profil, name='profil'),
     url(r'^matchs/$', views.matchs, name='matchs'),
     url(r'^deconnect/$', views.deconnect, name='deconnect'),
-    url(r'^tableau-simple1/$', views.tableausimple1, name='tableau-simple1'),
-    url(r'^tableau-simple2/$', views.tableausimple2, name='tableau-simple2'),
-    url(r'^tableau-simple3/$', views.tableausimple3, name='tableau-simple3'),
-    url(r'^tableau-equipes/$', views.tableauequipe, name='tableau-equipes'),
+    url(r'^register/$', views.page_register, name='page_register'),
+    url(r'^inscriptions/$', views.inscriptions, name='inscriptions'),
 
 
 ]
